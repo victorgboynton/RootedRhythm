@@ -2,17 +2,17 @@ import Image from "next/image";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col py-[5vh] text-white text-xl">
-			<div className="bg-sampleGroup w-[99vw] h-[600px] items-center mx-auto">
-				<div className="bg-black/60 h-full">
-					<div className="relative w-[400px] h-[500px] mx-auto">
+		<main className="flex min-h-screen flex-col py-[10vh] text-white text-xl">
+			<div className="sm:bg-sampleGroup w-[99vw] h-[600px] items-center mx-auto">
+				<div className="sm:bg-black/60 h-full">
+					<div className="relative w-[300px] h-[400px] sm:w-[400px] sm:h-[500px] mx-auto">
 						<Image
 							src="/rootedRhythmLogoInverted.webp"
 							alt="The Rooted Rhythm Logo"
 							fill
 						></Image>
 					</div>
-					<h1 className="text-center text-[50px] leading-[75px] font-Anta">
+					<h1 className="text-center text-3xl sm:text-[50px] sm:leading-[75px] font-Anta">
 						Bringing positivity through soul expression
 					</h1>
 				</div>
