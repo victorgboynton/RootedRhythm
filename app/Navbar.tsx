@@ -32,11 +32,11 @@ export function Navbar() {
 
 	return (
 		<header
-			className={`fixed top-0 w-[100vw] font-robotoSlab z-50 ${
+			className={`fixed top-0 w-[100vw] font-Anta z-50 ${
 				showNav ? "translate-y-0" : "-translate-y-full"
 			} transition-transform duration-300 ease-in-out`}
 		>
-			<div className="relative flex flex-row justify-between sm:h-[5vh] sm:pl-5 sm:pr-10 bg-purple-950 items-center z-50;">
+			<div className="relative flex flex-row justify-between sm:h-[5vh] sm:pl-5 sm:pr-10 bg-[#131349] items-center z-50;">
 				{isNavOpen ? (
 					<p></p>
 				) : (
