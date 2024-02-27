@@ -11,16 +11,17 @@ export default function Home() {
 							src="/rootedRhythmLogoInverted.webp"
 							alt="The Rooted Rhythm Logo"
 							fill
+							priority={true}
 						></Image>
 					</div>
-					<h1 className="text-center text-3xl sm:text-[50px] sm:leading-[75px] font-Anta">
+					<h1 className="text-center text-3xl sm:text-[50px] sm:leading-[81px] font-Anta">
 						Bringing positivity through soul expression
 					</h1>
 				</div>
 			</div>
 
 			<div className="my-12 w-[90vw] mx-auto bg-[#0b0b2b] p-4 rounded-2xl">
-				<h1 className="text-center font-Anta text-[40px] leading-[60px] mb-6">
+				<h1 className="text-center font-Anta text-[40px] leading-[65px] mb-6">
 					Peep Our Hit Tracks
 				</h1>
 				<div className=" flex flex-row flex-wrap justify-between ">
@@ -31,7 +32,7 @@ export default function Home() {
 			</div>
 
 			<div>
-				<h1 className="text-center font-Anta text-[40px] leading-[60px]">
+				<h1 className="text-center font-Anta text-[40px] leading-[65px]">
 					Upcoming Shows:
 				</h1>
 			</div>
