@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { SpotifyPreview } from "./SpotifyPreview";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col py-[10vh] text-white text-xl">
+		<main className="flex min-h-screen flex-col pt-[5vh] text-white text-xl">
 			<div className="sm:bg-sampleGroup w-[99vw] h-[600px] items-center mx-auto">
 				<div className="sm:bg-black/60 h-full">
-					<div className="relative w-[300px] h-[400px] sm:w-[400px] sm:h-[500px] mx-auto">
+					<div className="relative w-[300px] h-[400px] sm:w-[400px] sm:h-[500px] mx-auto animate-[fadeIn_2s_ease]">
 						<Image
 							src="/rootedRhythmLogoInverted.webp"
 							alt="The Rooted Rhythm Logo"
@@ -17,7 +18,8 @@ export default function Home() {
 					</h1>
 				</div>
 			</div>
-			<div className="mt-12 w-[90vw] mx-auto">
+
+			<div className="my-12 w-[90vw] mx-auto bg-[#0b0b2b] p-4 rounded-2xl">
 				<h1 className="text-center font-Anta text-[40px] leading-[60px] mb-6">
 					Peep Our Hit Tracks
 				</h1>
@@ -27,21 +29,12 @@ export default function Home() {
 					<SpotifyPreview url="https://open.spotify.com/embed/track/4NmOsSclInafCJTejEhPSp?utm_source=generator&theme=0"></SpotifyPreview>
 				</div>
 			</div>
+
+			<div>
+				<h1 className="text-center font-Anta text-[40px] leading-[60px]">
+					Upcoming Shows:
+				</h1>
+			</div>
 		</main>
-	);
-}
-type SpotifyPreviewProps = {
-	url: string;
-};
-function SpotifyPreview({ url }: SpotifyPreviewProps) {
-	return (
-		<iframe
-			src={url}
-			width="100%"
-			height="200"
-			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-			loading="lazy"
-			className=" w-[90vw] sm:w-[80vw] md:w-[65vw] lg:w-[40vw] xl:w-[25vw] mx-auto"
-		></iframe>
 	);
 }

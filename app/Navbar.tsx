@@ -47,7 +47,7 @@ export function Navbar() {
 				<button className="sm:hidden" onClick={handleSetIsNavOpen}>
 					{isNavOpen ? (
 						<div
-							className={`fixed inset-0 bg-gradient-to-b from-purple-800 to-purple-950  h-[100vh] w-[100vw] text-white flex flex-col pt-[25vh] justify-between`}
+							className={`fixed inset-0 bg-gradient-to-b from-[#131349] to-[#090924]  h-[100vh] w-[100vw] text-white flex flex-col pt-[25vh] justify-between`}
 						>
 							<div className="flex flex-col items-center text-2xl space-y-10">
 								<NavButton target={"/"}>Home</NavButton>
