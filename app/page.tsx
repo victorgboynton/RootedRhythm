@@ -35,7 +35,44 @@ export default function Home() {
         <h1 className="text-center font-Anta text-[40px] leading-[65px]">
           Upcoming Shows:
         </h1>
+        <ShowPreview
+          id={upcomingShows[0].id}
+          date={upcomingShows[0].date}
+          location={upcomingShows[0].location}
+        ></ShowPreview>
       </div>
     </main>
+  );
+}
+
+const upcomingShows: ShowPreviewProps[] = [
+  {
+    id: 1,
+    date: new Date("March 23, 2024 22:00:00"),
+    location: "Ziggy's Big Balls",
+  },
+  {
+    id: 2,
+    date: new Date("March 25, 2024 22:00:00"),
+    location: "James Cameron Saloon",
+  },
+  {
+    id: 3,
+    date: new Date("March 27, 2024 22:00:00"),
+    location: "Victor's Dungeon",
+  },
+];
+type ShowPreviewProps = {
+  id: number;
+  date: Date;
+  location: string;
+};
+function ShowPreview({ id, date, location }: ShowPreviewProps) {
+  return (
+    <div className="mb-20">
+      <p>{date.toString()}</p>
+      <p>At</p>
+      <h1>{location}</h1>
+    </div>
   );
 }
