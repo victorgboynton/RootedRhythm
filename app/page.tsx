@@ -69,9 +69,9 @@ type ShowPreviewProps = {
 };
 function ShowPreview({ id, date, location }: ShowPreviewProps) {
   return (
-    <div className="mb-20">
-      <p>{date.toString()}</p>
-      <p>At</p>
+    <div className="mb-20 w-[90vw] sm:w-[80vw] md:w-[65vw] lg:w-[40vw] xl:w-[25vw] mx-auto">
+      <p>{date.toLocaleDateString()}</p>
+      <p className="">At</p>
       <h1>{location}</h1>
     </div>
   );
