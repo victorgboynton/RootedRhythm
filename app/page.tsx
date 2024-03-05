@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { SpotifyPreview } from "./SpotifyPreview";
+import { UpcomingShows } from "./UpcomingShows";
+import { upcomingShows } from "./upcomingShows.1";
 
 export default function Home() {
 	return (
@@ -40,58 +42,5 @@ export default function Home() {
 				</div>
 			</div>
 		</main>
-	);
-}
-
-const upcomingShows: ShowPreviewProps[] = [
-	{
-		id: 1,
-		date: new Date("March 23, 2024 22:00:00"),
-		location: "Ziggy's Big Balls",
-	},
-	{
-		id: 2,
-		date: new Date("March 25, 2024 22:00:00"),
-		location: "James Cameron Saloon",
-	},
-	{
-		id: 3,
-		date: new Date("March 27, 2024 22:00:00"),
-		location: "Victor's Dungeon",
-	},
-];
-type ShowPreviewProps = {
-	id: number;
-	date: Date;
-	location: string;
-};
-function ShowPreview({ id, date, location }: ShowPreviewProps) {
-	return (
-		<div className="mb-20 w-[90vw] sm:w-[80vw] md:w-[65vw] lg:w-[40vw] xl:w-[25vw] justify-center flex flex-col items-center bg-[#0f0f0f] rounded-2xl mx-auto py-4">
-			<p>{date.toLocaleDateString()}</p>
-			<p className="">At</p>
-			<h1>{location}</h1>
-		</div>
-	);
-}
-type UpcomingShowsProps = {
-	showList: ShowPreviewProps[];
-};
-function UpcomingShows({ showList }: UpcomingShowsProps) {
-	return (
-		<div className="flex items-center justify-center">
-			<div className=" flex flex-col sm:flex-row flex-wrap justify-between xl:space-x-10">
-				{showList.map((e, index) => (
-					<div key={index}>
-						{" "}
-						<ShowPreview
-							id={e.id}
-							date={e.date}
-							location={e.location}
-						></ShowPreview>
-					</div>
-				))}
-			</div>
-		</div>
 	);
 }
