@@ -31,11 +31,13 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className="my-12 w-[90vw] mx-auto bg-[#0b0b2b] p-4 rounded-2xl">
+			<div className="mb-20 w-[90vw] mx-auto bg-[#212122] p-4 rounded-2xl">
 				<h1 className="text-center font-Anta text-[40px] leading-[65px]">
 					Upcoming Shows:
 				</h1>
-				<UpcomingShows showList={upcomingShows}></UpcomingShows>
+				<div>
+					<UpcomingShows showList={upcomingShows}></UpcomingShows>
+				</div>
 			</div>
 		</main>
 	);
@@ -65,7 +67,7 @@ type ShowPreviewProps = {
 };
 function ShowPreview({ id, date, location }: ShowPreviewProps) {
 	return (
-		<div className="mb-20 w-[90vw] sm:w-[80vw] md:w-[65vw] lg:w-[40vw] xl:w-[25vw] mx-auto">
+		<div className="mb-20 w-[90vw] sm:w-[80vw] md:w-[65vw] lg:w-[40vw] xl:w-[25vw] justify-center flex flex-col items-center bg-[#0f0f0f] rounded-2xl mx-auto py-4">
 			<p>{date.toLocaleDateString()}</p>
 			<p className="">At</p>
 			<h1>{location}</h1>
@@ -77,8 +79,8 @@ type UpcomingShowsProps = {
 };
 function UpcomingShows({ showList }: UpcomingShowsProps) {
 	return (
-		<div className="w-[90vw] mx-auto">
-			<div className=" flex flex-row flex-wrap justify-between">
+		<div className="flex items-center justify-center">
+			<div className=" flex flex-col sm:flex-row flex-wrap justify-between xl:space-x-10">
 				{showList.map((e, index) => (
 					<div key={index}>
 						{" "}
