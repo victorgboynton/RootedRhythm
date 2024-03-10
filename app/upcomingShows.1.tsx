@@ -1,10 +1,10 @@
 import { ShowPreviewProps } from "./ShowPreviewProps";
-
+// Adjust this section to reflect upcoming shows
 export const upcomingShows: ShowPreviewProps[] = [
 	{
 		id: 1,
 		date: new Date("March 23, 2024 22:00:00"),
-		location: "Ziggy's Big Balls",
+		location: "Fiddler's Green",
 	},
 	{
 		id: 2,
@@ -14,6 +14,6 @@ export const upcomingShows: ShowPreviewProps[] = [
 	{
 		id: 3,
 		date: new Date("March 27, 2024 22:00:00"),
-		location: "Victor's Dungeon",
+		location: "Mission Ballroom",
 	},
 ];
