@@ -2,8 +2,12 @@ import Image from "next/image";
 
 export default function Gallery() {
 	return (
-		<div>
-			<h1>This is the gallery</h1>
+		<div className="flex flex-row flex-wrap mt-[5vh]">
+			<GalleryComponent
+				picture="/fisheyeGroup.webp"
+				alt="Group Fisheye"
+				size="w-96 h-52"
+			></GalleryComponent>
 		</div>
 	);
 }
