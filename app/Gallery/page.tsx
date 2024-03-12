@@ -5,7 +5,7 @@ export default function Gallery() {
 		<div className="flex flex-row flex-wrap mt-[5vh]">
 			<GalleryComponent
 				picture="/fisheyeGroup.webp"
-				alt="Group Fisheye"
+				alt="Group Fisheye photo"
 				size="w-96 h-52"
 			></GalleryComponent>
 		</div>
