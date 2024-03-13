@@ -1,11 +1,11 @@
 import { shopifyApi } from "@shopify/shopify-api";
 
 export async function shopifyFetch({ query, variables }) {
-    const endpoint = 'https://bdbc0f.myshopify.com/api/2024-01/graphql.json';
+    const endpoint = process.env.SHOPIFY_STORE_DOMAIN;
   if (!endpoint) {
     throw new Error("Invalid Endpoint");
   }
-  const key = '8c3e07a43241b5d61ec52eadd42ebcb1'
+  const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
   if (!key) {
     throw new Error("Invalid Access Key");
   }
@@ -33,13 +33,24 @@ export async function shopifyFetch({ query, variables }) {
   }
 }
 export async function getAllProducts() {
+  console.log(await shopifyFetch({
+    query: `{
+      products(first: 5) {
+        nodes {
+          id
+          title
+          featuredImage
+        }
+      }
+    }`,
+  }))
   return shopifyFetch({
     query: `{
       products(first: 5) {
         nodes {
           id
           title
-          createdAt
+          featuredImage
         }
       }
     }`,
