@@ -1,11 +1,11 @@
 import { shopifyApi } from "@shopify/shopify-api";
 
 export async function shopifyFetch({ query, variables }) {
-  const endpoint = process.env.SHOPIFY_STORE_DOMAIN;
+  const endpoint = 'https://funtimeswithvic.myshopify.com/api/2024-01/graphql.json';
   if (!endpoint) {
     throw new Error("Invalid Endpoint");
   }
-  const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+  const key = 'ceef1c44dd989b6ef1a582eb332d1b63';
   if (!key) {
     throw new Error("Invalid Access Key");
   }
@@ -39,7 +39,6 @@ export async function getAllProducts() {
         nodes {
           id
           title
-          featuredImage
         }
       }
     }`,
@@ -50,8 +49,6 @@ export async function getAllProducts() {
         nodes {
           id
           title
-          featuredImage
-        }
       }
     }`,
   });
