@@ -32,7 +32,7 @@ export async function shopifyFetch({ query, variables }) {
   }
 }
 export async function getAllProducts() {
-  console.log(await shopifyFetch({
+  const response = await shopifyFetch({
     query: `{
       products(first: 10) {
         nodes {
@@ -48,16 +48,6 @@ export async function getAllProducts() {
           }
         }
       }`,
-  }))
-  return shopifyFetch({
-    query: `{
-      products(first: 5) {
-        nodes {
-          id
-          title
-          handle
-          descriptionHtml
-      }
-    }`,
   });
+  return response;
 }
