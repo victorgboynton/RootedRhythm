@@ -34,13 +34,20 @@ export async function shopifyFetch({ query, variables }) {
 export async function getAllProducts() {
   console.log(await shopifyFetch({
     query: `{
-      products(first: 5) {
+      products(first: 10) {
         nodes {
           id
           title
+          handle
+          descriptionHtml
+          featuredImage{
+                url
+                id
+                altText
+          }
+          }
         }
-      }
-    }`,
+      }`,
   }))
   return shopifyFetch({
     query: `{
@@ -48,6 +55,8 @@ export async function getAllProducts() {
         nodes {
           id
           title
+          handle
+          descriptionHtml
       }
     }`,
   });
