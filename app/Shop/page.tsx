@@ -1,12 +1,22 @@
 "use client";
+import { useEffect, useState } from "react";
 import { getAllProducts } from "./shopifyFetch";
 
 export default function Shop() {
+	const [products, setProducts] = useState<ProductProps[]>([]);
+	useEffect(() => {
+		const fetchProducts = async () => {
+			const allProducts = await getAllProducts();
+			setProducts(allProducts.body.data.products.nodes);
+		};
+
+		fetchProducts();
+	}, []);
 	return (
 		<div className="pt-20 text-white">
 			<h1>Products</h1>
 			<div>
-				<ProductsList products={getAllProducts} />
+				<ProductsList products={products} />
 			</div>
 		</div>
 	);
@@ -30,9 +40,9 @@ type ProductsListProps = {
 function ProductsList({ products }: ProductsListProps) {
 	return (
 		<div>
-			{products.map((product) => {
-				<div>{product.id}</div>;
-			})}
+			{products.map((product) => (
+				<div key={product.id}>{product.title}</div>
+			))}
 		</div>
 	);
 }
