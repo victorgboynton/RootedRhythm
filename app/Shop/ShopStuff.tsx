@@ -3,9 +3,13 @@ import { useEffect, useState } from "react";
 import { getAllProducts } from "./shopifyFetch";
 import { ProductProps } from "./page";
 
+declare global {
+	interface Window {
+		ShopifyBuy: any;
+	}
+}
 export default function ShopStuff() {
 	const [products, setProducts] = useState<ProductProps[]>([]);
-
 	useEffect(() => {
 		const fetchProducts = async () => {
 			const allProducts = await getAllProducts();
@@ -33,12 +37,12 @@ export default function ShopStuff() {
 		};
 
 		const ShopifyBuyInit = () => {
-			const client = ShopifyBuy.buildClient({
+			const client = window.ShopifyBuy.buildClient({
 				domain: process.env.SHOPIFY_STORE_DOMAIN,
 				storefrontAccessToken: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
 			});
 
-			ShopifyBuy.UI.onReady(client).then((ui: any) => {
+			window.ShopifyBuy.UI.onReady(client).then((ui: any) => {
 				ui.createComponent("collection", {
 					id: process.env.SHOPIFY_COLLECTION_ID,
 					node: document.getElementById("collection-component-1711452585861"),
