@@ -1,15 +1,15 @@
 import { shopifyApi } from "@shopify/shopify-api";
 
 export async function shopifyFetch({ query, variables }) {
-    const endpoint = process.env.SHOPIFY_STORE_DOMAIN;
+  const endpoint = 'https://funtimeswithvic.myshopify.com/api/2024-01/graphql.json';
   if (!endpoint) {
     throw new Error("Invalid Endpoint");
   }
-  const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+  const key = 'ceef1c44dd989b6ef1a582eb332d1b63';
   if (!key) {
     throw new Error("Invalid Access Key");
   }
-
+  
   try {
     const result = await fetch(endpoint, {
       method: "POST",
@@ -19,7 +19,6 @@ export async function shopifyFetch({ query, variables }) {
       },
       body: { query, variables } && JSON.stringify({ query, variables }),
     });
-    console.log(result);
     return {
       status: result.status,
       body: await result.json(),
@@ -33,26 +32,22 @@ export async function shopifyFetch({ query, variables }) {
   }
 }
 export async function getAllProducts() {
-  console.log(await shopifyFetch({
+  const response = await shopifyFetch({
     query: `{
-      products(first: 5) {
+      products(first: 10) {
         nodes {
           id
           title
-          featuredImage
+          handle
+          descriptionHtml
+          featuredImage {
+                url
+                id
+                altText
+          }
+          }
         }
-      }
-    }`,
-  }))
-  return shopifyFetch({
-    query: `{
-      products(first: 5) {
-        nodes {
-          id
-          title
-          featuredImage
-        }
-      }
-    }`,
+      }`,
   });
+  return response;
 }
