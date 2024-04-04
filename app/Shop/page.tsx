@@ -24,7 +24,7 @@ export type ProductProps = {
 type ProductsListProps = {
 	products: ProductProps[];
 };
-export function ProductsList({ products }: ProductsListProps) {
+function ProductsList({ products }: ProductsListProps) {
 	return (
 		<div>
 			{products.map((product) => (
