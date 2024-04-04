@@ -34,13 +34,13 @@ export default function ShopStuff() {
 
 		const ShopifyBuyInit = () => {
 			const client = ShopifyBuy.buildClient({
-				domain: "funtimeswithvic.myshopify.com",
-				storefrontAccessToken: "ceef1c44dd989b6ef1a582eb332d1b63",
+				domain: process.env.SHOPIFY_STORE_DOMAIN,
+				storefrontAccessToken: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
 			});
 
 			ShopifyBuy.UI.onReady(client).then((ui: any) => {
 				ui.createComponent("collection", {
-					id: "your-collection-id",
+					id: process.env.SHOPIFY_COLLECTION_ID,
 					node: document.getElementById("collection-component-1711452585861"),
 					moneyFormat: "%24%7B%7Bamount%7D%7D",
 					options: {
