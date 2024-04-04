@@ -40,7 +40,7 @@ export async function getAllProducts() {
           title
           handle
           descriptionHtml
-          featuredImage{
+          featuredImage {
                 url
                 id
                 altText

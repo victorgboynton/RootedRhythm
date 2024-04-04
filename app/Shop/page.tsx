@@ -1,28 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
-import { getAllProducts } from "./shopifyFetch";
+import Image from "next/image";
+import ShopStuff from "./ShopStuff";
 
 export default function Shop() {
-	const [products, setProducts] = useState<ProductProps[]>([]);
-	useEffect(() => {
-		const fetchProducts = async () => {
-			const allProducts = await getAllProducts();
-			setProducts(allProducts.body.data.products.nodes);
-		};
-
-		fetchProducts();
-	}, []);
 	return (
-		<div className="pt-20 text-white">
-			<h1>Products</h1>
-			<div>
-				<ProductsList products={products} />
-			</div>
+		<div>
+			<ShopStuff />
 		</div>
 	);
 }
-
-type ProductProps = {
+export type ProductProps = {
 	id: string;
 	title: string;
 	handle: string;
@@ -37,11 +24,20 @@ type ProductProps = {
 type ProductsListProps = {
 	products: ProductProps[];
 };
-function ProductsList({ products }: ProductsListProps) {
+export function ProductsList({ products }: ProductsListProps) {
 	return (
 		<div>
 			{products.map((product) => (
-				<div key={product.id}>{product.title}</div>
+				<div key={product.id}>
+					{product.title}
+					<div className="relative w-96 h-96">
+						<Image
+							src={"/rootedRhythmLogoInverted.webp"}
+							alt={"hello"}
+							fill
+						></Image>
+					</div>
+				</div>
 			))}
 		</div>
 	);
