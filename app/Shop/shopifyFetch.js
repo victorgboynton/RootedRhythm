@@ -1,11 +1,11 @@
 import { shopifyApi } from "@shopify/shopify-api";
 
 export async function shopifyFetch({ query, variables }) {
-  const endpoint = 'https://funtimeswithvic.myshopify.com/api/2024-01/graphql.json';
+  const endpoint = process.env.SHOPIFY_STOREFRONT_DOMAIN;
   if (!endpoint) {
     throw new Error("Invalid Endpoint");
   }
-  const key = 'ceef1c44dd989b6ef1a582eb332d1b63';
+  const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
   if (!key) {
     throw new Error("Invalid Access Key");
   }
