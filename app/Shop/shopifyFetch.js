@@ -1,7 +1,7 @@
 import { shopifyApi } from "@shopify/shopify-api";
 
 export async function shopifyFetch({ query, variables }) {
-  const endpoint = process.env.SHOPIFY_STOREFRONT_DOMAIN;
+  const endpoint = process.env.SHOPIFY_STORE_DOMAIN;
   if (!endpoint) {
     throw new Error("Invalid Endpoint");
   }
