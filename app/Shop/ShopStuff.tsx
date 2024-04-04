@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "./shopifyFetch";
-import { ProductProps, ProductsList } from "./page";
+import { ProductProps } from "./page";
 
 export default function ShopStuff() {
 	const [products, setProducts] = useState<ProductProps[]>([]);
@@ -34,8 +34,8 @@ export default function ShopStuff() {
 
 		const ShopifyBuyInit = () => {
 			const client = ShopifyBuy.buildClient({
-				domain: "your-shopify-domain.myshopify.com",
-				storefrontAccessToken: "your-storefront-access-token",
+				domain: "funtimeswithvic.myshopify.com",
+				storefrontAccessToken: "ceef1c44dd989b6ef1a582eb332d1b63",
 			});
 
 			ShopifyBuy.UI.onReady(client).then((ui: any) => {
@@ -50,7 +50,7 @@ export default function ShopStuff() {
 							variantId: "all",
 							width: "240px",
 							contents: {
-								img: false,
+								img: true,
 								imgWithCarousel: true,
 								title: false,
 								variantTitle: false,
