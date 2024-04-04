@@ -45,7 +45,7 @@ export default function ShopStuff() {
 			window.ShopifyBuy.UI.onReady(client).then((ui: any) => {
 				ui.createComponent("collection", {
 					id: process.env.SHOPIFY_COLLECTION_ID,
-					node: document.getElementById("collection-component-1711452585861"),
+					node: document.getElementById("collection-component-1712266099256"),
 					moneyFormat: "%24%7B%7Bamount%7D%7D",
 					options: {
 						product: {
