@@ -44,7 +44,7 @@ export default function ShopStuff() {
 
 			window.ShopifyBuy.UI.onReady(client).then((ui: any) => {
 				ui.createComponent("collection", {
-					id: process.env.SHOPIFY_COLLECTION_ID,
+					id: "472990810397",
 					node: document.getElementById("collection-component-1712266099256"),
 					moneyFormat: "%24%7B%7Bamount%7D%7D",
 					options: {
@@ -54,7 +54,7 @@ export default function ShopStuff() {
 							variantId: "all",
 							width: "240px",
 							contents: {
-								img: true,
+								img: false,
 								imgWithCarousel: true,
 								title: false,
 								variantTitle: false,
@@ -140,7 +140,7 @@ export default function ShopStuff() {
 	return (
 		<div className="pt-20 text-white">
 			<h1>Products</h1>
-			<div>
+			<div id="collection-component-1712266099256">
 				{products.map((product) => (
 					<div key={product.id}>{product.title}</div>
 				))}
