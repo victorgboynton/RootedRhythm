@@ -34,7 +34,7 @@ export async function shopifyFetch({ query, variables }) {
 export async function getAllProducts() {
   const response = await shopifyFetch({
     query: `{
-      products(first: 10) {
+      products(first: 100) {
         nodes {
           id
           title

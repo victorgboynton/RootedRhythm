@@ -140,7 +140,8 @@ export default function ShopStuff() {
 	return (
 		<div className="pt-20 text-white">
 			<h1>Products</h1>
-			<div id="collection-component-1712266099256">
+			<div id="collection-component-1712266099256"></div>
+			<div>
 				{products.map((product) => (
 					<div key={product.id}>{product.title}</div>
 				))}
